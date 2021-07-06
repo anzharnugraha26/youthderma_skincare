@@ -12,12 +12,13 @@
                 @endforeach
             </ul>
         </div>
+        
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 footer-links">
             <h4 class="h4" style="color: white">TERHUBUNG DENGAN KAMI</h4>
             <ul class="list--inline site-footer__social-icons social-icons">
-                <img src="{{asset('image/logo/wa.png')}}" style="margin-left: 15px">
-                <img src="{{asset('image/logo/ig.png')}}" style="margin-left: 15px">
-                <img src="{{asset('image/logo/phone.png')}}" style="margin-left: 15px">
+                <img src="{{asset('image/ig.png')}}" style="margin-left: 5px">
+                <img src="{{asset('image/wa.png')}}" style="margin-left: 5px">
+                <img src="{{asset('image/phone.png')}}" style="margin-left: 5px">
             </ul>
         </div>
         {{-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 footer-links">

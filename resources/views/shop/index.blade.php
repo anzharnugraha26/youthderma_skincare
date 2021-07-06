@@ -77,8 +77,8 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="section-header text-center">
-                        <h2 class="h2">All Products</h2>
-                        <p>Our most popular products based on sales</p>
+                        <h2 class="h2" style="font-family: 'Poppins';">All Products</h2>
+                        
                     </div>
                     <div class="productSlider grid-products">
                        @foreach ($product as $item)
