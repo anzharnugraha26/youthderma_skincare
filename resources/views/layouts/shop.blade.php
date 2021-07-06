@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -103,7 +102,7 @@
             <div class="row align-items-center">
             	<!--Desktop Logo-->
                 <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
-                    <a href="{{url("/shop")}}">
+                    <a href="{{url("/")}}">
                     	<img src="{{asset('image/logo/shop.png')}}" alt="Youthderma Aesthetic Clinic" title="Youthderma Aesthetic Clinic" />
                     </a>
                 </div>
@@ -343,7 +342,7 @@
             <div class="footer-bottom">
                 <div class="row">
                     <!--Footer Copyright-->
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-center"><span></span> &copy; 2021 . All Rights Reserved. <a href="{{url("/shop")}}" target="_blank">Youthderma SkinCare</a></div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-center"><span></span> &copy; 2021 . All Rights Reserved. <a href="{{url("/")}}" target="_blank">Youthderma SkinCare</a></div>
                     <!--End Footer Copyright-->
                 </div>
             </div>

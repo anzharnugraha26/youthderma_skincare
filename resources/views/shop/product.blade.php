@@ -20,7 +20,7 @@
                             <div class="widget-content">
                                 <ul class="sidebar_categories">
                                    @foreach ($product as $item)
-                                   <li class="lvl-1"><a href="#;" class="site-nav">{{$item->name}}</a></li>                                       
+                                   <li class="lvl-1"><a href="{{url('product-detail/' . $item->id)}}" class="site-nav">{{$item->name}}</a></li>                                       
                                    @endforeach
                                 </ul>
                             </div>
@@ -57,12 +57,12 @@
                                 <div class="list-view-item__image-column">
                                     <div class="list-view-item__image-wrapper">
                                         <!-- Image -->
-                                        <a href="product-layout-2.html"><img class="list-view-item__image blur-up lazyload" data-src="{{asset('image/product/' .$item->image)}}" src="{{asset('image/product/' .$item->image)}}" alt="image" title="product"></a>
+                                        <a href="{{url('product-detail/' . $item->id)}}"><img class="list-view-item__image blur-up lazyload" data-src="{{asset('image/product/' .$item->image)}}" src="{{asset('image/product/' .$item->image)}}" alt="image" title="product"></a>
                                         <!-- End Image -->
                                     </div>
                                 </div>
                                 <div class="list-view-item__title-column">
-                                    <div class="h4 grid-view-item__title"><a href="product-layout-2.html">{{$item->name}}</a></div>
+                                    <div class="h4 grid-view-item__title"><a href="{{url('product-detail/' . $item->id)}}">{{$item->name}}</a></div>
                                     <!-- Product Review -->
                                     <p class="product-review"><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i></p>
                                     <!-- End Product Review -->
