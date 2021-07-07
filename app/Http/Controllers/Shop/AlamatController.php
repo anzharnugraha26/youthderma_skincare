@@ -38,7 +38,7 @@ class AlamatController extends Controller
 
     public function getCities($id)
     {
-        $city = City::where('province_id', $id)->pluck('name', 'city_id');
+        $city = City::where('province_id', $id)->get();
         return response()->json($city);
     }
   

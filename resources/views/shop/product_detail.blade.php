@@ -157,7 +157,89 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="section-header text-center">
+                            <h2 class="h2" style="font-family: 'Poppins';">PRODUK LAINNYA</h2>
+                            
+                        </div>
+                        <div class="productSlider grid-products">
+                            <?php $product = DB::table('products')->get();?>
+
+                           @foreach ($product as $item)
+                           
+                           <div class="col-12 item">
+                               <!-- start product image -->
+                               <div class="product-image">
+                                   <!-- start product image -->
+                                   <a href="{{url('product-detail/'. $item->id)}}" class="grid-view-item__link">
+                                       <img class="primary blur-up lazyload" data-src="{{asset('image/product/'.$item->image)}}" src="{{asset('image/product/'.$item->image)}}" alt="image" title="product">
+                                       <img class="hover blur-up lazyload" data-src="{{asset('image/product/'.$item->image)}}" src="{{asset('image/product/'.$item->image)}}" alt="image" title="product">
+                                       <img class="grid-view-item__image hover variantImg" src="{{asset('image/product/'.$item->image)}}" alt="image" title="product">
+                                   </a>
+                                   @if(Auth::check())
+                                   <form class="variants add" action="{{url('add-carts/' .$item->id)}}" method="post">
+                                    @csrf
+                                            <input type="hidden" value="{{$item->id}}" name="product_id">
+                                            {{-- <input type="hidden" value="{{$item->name}}" name="product_name">
+                                            <input type="hidden" value="{{$item->price}}" name="product_price">
+                                            <input type="hidden" value="{{$item->weight}}" name="weight"> --}}
+                                            <input type="hidden" value="1" name="qty">
+                                            <button class="btn btn-addto-cart" tabindex="0">Add To Cart</button>
+                                   </form>
+                                   @else
+                                   <form class="variants add" action="{{url("product-detail/". $item->id)}}" method="get">
+                                    @csrf
+                                            <button class="btn btn-addto-cart" tabindex="0">View Detail</button>
+                                   </form>
+                                    @endif
+                                   {{-- <div class="button-set">
+                                       <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
+                                           <i class="icon anm anm-search-plus-r"></i>
+                                       </a>
+                                       <div class="wishlist-btn">
+                                           <a class="wishlist add-to-wishlist" href="wishlist.html">
+                                               <i class="icon anm anm-heart-l"></i>
+                                           </a>
+                                       </div>
+                                       <div class="compare-btn">
+                                           <a class="compare add-to-compare" href="compare.html" title="Add to Compare">
+                                               <i class="icon anm anm-random-r"></i>
+                                           </a>
+                                       </div>
+                                   </div> --}}
+                               </div>
+    
+                               <div class="product-details text-center">
+                                   
+                                   <div class="product-name">
+                                       <a href="{{url('product-detail/'. $item->id)}}">{{$item->name}}</a>
+                                   </div>
+                                
+                                   <div class="product-price">
+                                       <span class="price">{{ 'Rp.' . number_format($item->price) }}</span>
+                                   </div>
+                                   <!-- End Variant -->
+                               </div>
+                               <!-- End product details -->
+                           </div>
+                           
+                           @endforeach
+    
+    
+    
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+
     </div>
+
 </div>
 <hr>
 

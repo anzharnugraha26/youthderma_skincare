@@ -67,28 +67,33 @@
 @section('script-shop')
 <script>
     var toHtml = (tag, value) => {
-        $(tag).html(value);
-        }
-     $(document).ready(function() {
-        $('select[name="province_id"]').on('change', function () {
-            let provindeId = $(this).val();
-            if (provindeId) {
-                jQuery.ajax({
-                    url: '/getcity/'+provindeId,
-                    type: "GET",
-                    dataType: "json",
-                    success: function (response) {
-                        $('select[name="cities_id"]').empty();
-                        $('select[name="cities_id"]').append('<option value="">-- pilih kota tujuan --</option>');
-                        $.each(response, function (key, value) {
-                            $('select[name="cities_id"]').append('<option value="' + key + '">' + value + '</option>');
-                        });
-                    },
-                });
-            } else {
-                $('select[name="cities_id"]').append('<option value="">-- pilih kota tujuan --</option>');
-            }
-        });
-     });
-    </script>
+	$(tag).html(value);
+	}
+ $(document).ready(function() {
+    //  $('#province_id').select2();
+    //  $('#cities_id').select2();
+     $('#province_id').on('change',function(){
+     var id = $('#province_id').val();
+     var url = window.location.href;
+     var urlNya = url.substring(0, url.lastIndexOf('/alamat/'));   
+     $.ajax({
+         type:'GET',
+         url:urlNya + '/getcity/' + id,
+         dataType:'json',
+         success:function(data){
+            var op = '<option value="">Pilih Kota</option>';
+            if(data.length > 0) {
+			var i = 0;
+			for(i = 0; i < data.length; i++) {
+				op += `<option value="${data[i].city_id}">${data[i].type} ${data[i].name}</option>`
+			}
+		    }
+            toHtml('[name="cities_id"]', op);
+         }
+     })
+     })
+ });    
+    
+    
+</script>
 @endsection

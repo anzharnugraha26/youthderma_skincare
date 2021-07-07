@@ -10,9 +10,69 @@
     <!--End Page Title-->
     
     <div class="container">
-       
         <div class="row billing-fields">
+            
+        </div>
+        
+        <div class="row billing-fields">
+
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 sm-margin-30px-bottom">
+                <div class="create-ac-content bg-light-gray padding-20px-all">
+            <fieldset>
+                <h2 class="login-title mb-3">Details Address</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>:</td>
+                    <td>{{ Auth::user()->name }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>:</td>
+                    <td>{{ Auth::user()->email }}</td>
+                </tr>
+                <tr>
+                    <th>Phone Number</th>
+                    <td>:</td>
+                    <td>{{$alamat->phone}}</td>
+                </tr>
+                <tr>
+                    <th>Province</th>
+                    <td>:</td>
+                    <td>{{$alamat->prov}}</td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>:</td>
+                    <td>{{$alamat->type}} {{$alamat->kota}}</td>
+                </tr>
+                <tr>
+                    <th>Detail</th>
+                    <td>:</td>
+                    <td><p>{{$alamat->detail}}, {{$alamat->type}} {{$alamat->kota}}, {{$alamat->prov}}</p></td>
+                </tr>
+                <tr>
+                    <th>Postal Code</th>
+                    <td>:</td>
+                    <td>{{$alamat->postal_code}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td  class="p-2"><a href="{{url('edit-address/' . Auth::user()->id)}}"  class="btn btn-primary mt-1" style="background: #8AA385">Edit Address</a><br>
+                    {{-- <small>Klik tombol ini jika pembeli sudah terbukti melakukan pembayaran</small> --}}
+                    </td>
+                </tr>
+                
+            </table>
+            </fieldset>
+                </div>
+            </div>
+
+
+
+
+            {{-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 sm-margin-30px-bottom">
                 <div class="create-ac-content bg-light-gray padding-20px-all">
                     <form>
                         <fieldset>
@@ -51,81 +111,31 @@
                                 </div>
                             </div>
                             <div class="row">
-                                {{-- <div class="form-group col-md-6 col-lg-6 col-xl-6">
-                                    <label for="input-address-2">Courier <span class="required-f">*</span></label>
-                                    <select  name="courier">
-                                        <option value="0">-- pilih jasa kurir --</option>
-                                        <option value="jne">JNE</option>
-                                        <option value="pos">POS</option>
-                                        <option value="tiki">TIKI</option>
-                                        
-                                    </select>
-                                </div> --}}
-                                {{-- <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-city">Province <span class="required-f">*</span></label>
-                                    <select  name="province_destination">
-                                        <option value="0">-- pilih provinsi asal --</option>
-                                        @foreach ($alamat as $value)
-                                            <option value="{{ $value->province_id  }}">{{ $value->prov }}</option>
-                                        @endforeach
-                                    </select>
-                                </div> --}}
-                            </div>
-                            <div class="row">
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                     <label for="input-postcode">Post Code <span class="required-f">*</span></label>
                                     <input name="postcode" value="" id="input-postcode" type="text">
                                 </div>
-                                {{-- <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-country">City <span class="required-f">*</span></label>
-                                    <select name="city_destination" id="input-country">
-                                        <option value=""> --- Please Select --- </option>
-                            
-                                    </select>
-                                </div> --}}
+                               
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                
-                                <a href="{{url('shop/edit-address/' . Auth::user()->id)}}" class="">Edit Alamat</a>
+                                <a href="{{url('edit-address/' . Auth::user()->id)}}" class="">Edit Alamat</a>
                                
                             </div>
-                                {{-- <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-zone">Region / State <span class="required-f">*</span></label>
-                                    <select name="zone_id" id="input-zone">
-                                        <option value=""> --- Please Select --- </option>
-                                        <option value="3513">Aberdeen</option>
-                                        <option value="3514">Aberdeenshire</option>
-                                        <option value="3515">Anglesey</option>
-                                        <option value="3516">Angus</option>
-                                    </select>
-                                </div> --}}
-                            </div>
                         </fieldset>
 
                         <fieldset>
-                            {{-- <div class="row">
-                                <div class="form-group form-check col-md-12 col-lg-12 col-xl-12">
-                                    <label class="form-check-label padding-15px-left">
-                                        <input type="checkbox" class="form-check-input" value=""><strong>Create an account ?</strong>
-                                    </label>
-                                </div>
-                            </div> --}}
+                            
                         </fieldset>
 
                         <fieldset>
-                            {{-- <div class="row">
-                                <div class="form-group col-md-12 col-lg-12 col-xl-12">
-                                    <label for="input-company">Order Notes <span class="required-f">*</span></label>
-                                    <textarea class="form-control resize-both" rows="3"></textarea>
-                                </div>
-                            </div> --}}
                         </fieldset>
                     </form>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="your-order-payment">

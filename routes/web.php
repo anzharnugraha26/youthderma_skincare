@@ -24,7 +24,9 @@ Route::post('add-carts/{id}', 'Shop\CartController@store');
 Route::post('/carts/update', 'Shop\CartController@update');
 
 Route::get('add-address', 'Shop\AlamatController@index');
+Route::get('edit-address/{id}', 'Shop\AlamatController@edit');
 Route::get('getcity/{id}', 'Shop\AlamatController@getCities');
+Route::get('/getcity/{id}','Shop\AlamatController@getCities')->name('alamat.getCity');
 Route::post('savealamat', 'Shop\AlamatController@saveAlamat');
 
 Route::get('check-out', 'Shop\CheckOutController@index');
@@ -37,6 +39,8 @@ Route::post('/bukti-bayar/{id}', 'Shop\OrderController@kirimBukti');
 Route::get('/order-detail/{id}', 'Shop\OrderController@show');
 Route::post('kurir', 'Shop\CheckOutController@store');
 Route::get('gallery', 'ShopController@gallery');
+
+Route::get('test', 'HomeController@test');
 
 
 Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin'], function () {

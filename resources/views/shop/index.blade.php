@@ -70,8 +70,7 @@
             </div>
         </div>
     </div>
-    <!--End Home slider-->
-    <!--Weekly Bestseller-->
+
     <div class="section">
         <div class="container">
             <div class="row">
@@ -148,8 +147,7 @@
             </div>    
         </div>
     </div>
-    <!--Weekly Bestseller-->
-    <!--Parallax Section-->
+  
     <div class="section">
         <div class="hero hero--large hero__overlay bg-size">
             <img class="bg-img" src="{{asset('image/background/detail.jpg')}}" alt="" />
@@ -164,7 +162,8 @@
             </div>
         </div>
     </div>
-    <!--End Parallax Section-->
+   
+
 
     <div class="section imgBanners pb-0">
         <div class="imgBnrOuter">
@@ -238,8 +237,7 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="section-header text-center">
-                        <h2 class="h2">All Products</h2>
-                        {{-- <p>Grab these new items before they are gone!</p> --}}
+                        <h2 class="h2">All Products</h2>  
                     </div>
                 </div>
             </div>
@@ -247,7 +245,7 @@
                 <div class="row">
                     @foreach ($product as $item)
                     <div class="col-6 col-sm-2 col-md-4  item">
-                        <!-- start product image -->
+                       
                         <div class="product-image">
                             <!-- start product image -->
                             <a href="{{url('product-detail/'. $item->id)}}" class="grid-view-item__link">
@@ -275,40 +273,21 @@
                                </form>
                              
                             @endif
-{{-- 
-                            <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
-                                <div class="wishlist-btn">
-                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                        <i class="icon anm anm-heart-l"></i>
-                                    </a>
-                                </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html" title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
-                            </div> --}}
-                            <!-- end product button -->
+
                         </div>
-                        <!-- end product image -->
-                        <!--start product details -->
+
                         <div class="product-details text-center">
                             <!-- product name -->
                             <div class="product-name">
                                 <a href="{{url('product-detail/'. $item->id)}}">{{$item->name}}</a>
                             </div>
-                            <!-- End product name -->
-                            <!-- product price -->
+
                             <div class="product-price">
-                                {{-- <span class="old-price">$500.00</span> --}}
                                 <span class="price">{{ 'Rp.' . number_format($item->price) }}</span>
                             </div>
                            
                         </div>
-                        <!-- End product details -->
+                        
                     </div>
                     @endforeach
                    
