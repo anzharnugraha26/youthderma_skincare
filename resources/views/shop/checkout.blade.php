@@ -288,7 +288,7 @@
                             <input type="hidden" value="{{ $ongkir }}" name="ongkir">
                             <input name="no_hp" value="{{$alamat->phone}}"  type="hidden" >
                             <div class="order-button-payment">
-                                <button class="btn" value="Place order" type="submit">Place order</button>
+                                <button class="btn" value="Place order" type="submit" style="background: #8AA385">Place order</button>
                             </div>
                         </div>
                     </div>

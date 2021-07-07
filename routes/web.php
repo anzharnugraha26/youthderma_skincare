@@ -28,6 +28,7 @@ Route::get('edit-address/{id}', 'Shop\AlamatController@edit');
 Route::get('getcity/{id}', 'Shop\AlamatController@getCities');
 Route::get('/getcity/{id}','Shop\AlamatController@getCities')->name('alamat.getCity');
 Route::post('savealamat', 'Shop\AlamatController@saveAlamat');
+Route::post('updatealamat/{id}', 'Shop\AlamatController@update');
 
 Route::get('check-out', 'Shop\CheckOutController@index');
 

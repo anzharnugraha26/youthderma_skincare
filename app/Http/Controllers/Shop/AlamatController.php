@@ -79,7 +79,7 @@ class AlamatController extends Controller
     public function update(Request $request, $id)
     {
         Alamat::find($id)->update($request->all());
-        return redirect()->back();
+        return redirect('check-out');
     }
 
     public function destroy($id)

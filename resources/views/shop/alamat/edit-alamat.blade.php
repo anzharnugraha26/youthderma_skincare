@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
                 <div class="mb-4">
-                   <form method="post" action="{{url("shop/updatealamat/". $alamat->id)}}" id="CustomerLoginForm" accept-charset="UTF-8" class="contact-form">	
+                   <form method="post" action="{{url("updatealamat/". $alamat->id)}}" id="CustomerLoginForm" accept-charset="UTF-8" class="contact-form">	
                     @csrf  
                     <div class="row">
                           <div class="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -35,7 +35,7 @@
                                 <select name="cities_id" id="cities_id"autofocus="" >
                                     <?php $b = DB::table('cities')->where('province_id', $alamat->province_id)->get();  ?>
                                     @foreach($b as $kota)
-                                   <option value="{{$kota->city_id}}" @if($kota->city_id == $alamat->city_id) selected="selected" @endif>{{$kota->name}}</option>
+                                   <option value="{{$kota->city_id}}" @if($kota->city_id == $alamat->city_id) selected="selected" @endif>{{$kota->type}} {{$kota->name}}</option>
                                    @endforeach
                                 </select>
                             </div>
@@ -71,28 +71,33 @@
 @section('script-shop')
 <script>
     var toHtml = (tag, value) => {
-        $(tag).html(value);
-        }
-     $(document).ready(function() {
-        $('select[name="province_id"]').on('change', function () {
-            let provindeId = $(this).val();
-            if (provindeId) {
-                jQuery.ajax({
-                    url: '/shop/check-out/getcities/'+provindeId,
-                    type: "GET",
-                    dataType: "json",
-                    success: function (response) {
-                        $('select[name="cities_id"]').empty();
-                        $('select[name="cities_id"]').append('<option value="">-- pilih kota tujuan --</option>');
-                        $.each(response, function (key, value) {
-                            $('select[name="cities_id"]').append('<option value="' + key + '">' + value + '</option>');
-                        });
-                    },
-                });
-            } else {
-                $('select[name="cities_id"]').append('<option value="">-- pilih kota tujuan --</option>');
-            }
-        });
-     });
+	$(tag).html(value);
+	}
+ $(document).ready(function() {
+    //  $('#province_id').select2();
+    //  $('#cities_id').select2();
+     $('#province_id').on('change',function(){
+     var id = $('#province_id').val();
+     var url = window.location.href;
+     var urlNya = url.substring(0, url.lastIndexOf('/alamat/'));   
+     $.ajax({
+         type:'GET',
+         url:urlNya + '/getcity/' + id,
+         dataType:'json',
+         success:function(data){
+            var op = '<option value="">Pilih Kota</option>';
+            if(data.length > 0) {
+			var i = 0;
+			for(i = 0; i < data.length; i++) {
+				op += `<option value="${data[i].city_id}">${data[i].type} ${data[i].name}</option>`
+			}
+		    }
+            toHtml('[name="cities_id"]', op);
+         }
+     })
+     })
+ });    
+    
+    
     </script>
 @endsection
