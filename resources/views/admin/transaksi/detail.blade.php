@@ -93,17 +93,26 @@
                       <td>:</td>
                       <td  class="p-2"></td>
                   </tr>
+                  @if($order->status_order_id == 1)
+                  <tr>
+                      <td></td>
+                      <td></td>
+                      <td  class="p-2"><a href="{{url('admin/transaksi/konfirmasi/'. $order->id)}}" onclick="return confirm('Yakin ingin mengonfirmasi pesanan ini?')" class="btn btn-primary mt-1">Konfirmasi Telah Bayar</a><br>
+                      <small>Klik tombol ini jika pembeli sudah terbukti melakukan pembayaran</small>
+                      </td>
+                  </tr>
+                  @endif
                   @if($order->bukti_bayar != null)
                   <tr>
                       <td>Bukti Pembayaran</td>
                       <td>:</td>
-                      <td  class="p-2"><img src="{{ asset('storage/'.$order->bukti_bayar) }}" alt="" srcset="" class="img-fluid" width="300"></td>
+                      <td  class="p-2"><img src="{{ asset('image/bukti/'.$order->bukti_bayar) }}" alt="" srcset="" class="img-fluid" width="300"></td>
                   </tr>
                   @if($order->status_order_id == 2)
                   <tr>
                       <td></td>
                       <td></td>
-                      <td  class="p-2"><a href="" onclick="return confirm('Yakin ingin mengonfirmasi pesanan ini?')" class="btn btn-primary mt-1">Konfirmasi Telah Bayar</a><br>
+                      <td  class="p-2"><a href="{{url('admin/transaksi/konfirmasi/'. $order->id)}}" onclick="return confirm('Yakin ingin mengonfirmasi pesanan ini?')" class="btn btn-primary mt-1">Konfirmasi Telah Bayar</a><br>
                       <small>Klik tombol ini jika pembeli sudah terbukti melakukan pembayaran</small>
                       </td>
                   </tr>
@@ -114,7 +123,7 @@
                       <td>No Resi</td>
                       <td>:</td>
                       <td  class="p-2">
-                      <form action="{{ route('admin.transaksi.inputresi',['id' => $order->id]) }}" method="POST">
+                      <form action="{{url("/admin/input-resi/". $order->id)}}" method="POST">
                           @csrf
                       <div class="form-group">
                       <div class="input-group">
