@@ -40,7 +40,8 @@
 
                         <div class="form-group">
                           <label for="exampleInputEmail1">Cara Penggunaan</label>
-                          <textarea class="form-control" id="exampleInputEmail1" placeholder="Enter Name" name="cara_penggunaan" ></textarea>
+                          <textarea class="textarea" placeholder="Place some text here" name="cara_penggunaan"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                         </div>
 
                         <div class="form-group">

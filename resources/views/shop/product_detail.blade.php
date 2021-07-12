@@ -179,36 +179,46 @@
                   <div id="London" class="tabcontent">
                       <div class="card-body">
                           <h3>Cara Penggunaan :</h3>
-                          <p>{{ $product->cara_penggunaan }}</p>
+                          <p>{!! $product->cara_penggunaan !!}</p>
                       </div>
                   </div>
                   
                   <div id="Paris" class="tabcontent">
                         <div class="card-body">
-                            @if($product->description != null)
-                                <h3>Keterangan :</h3>
-                                <p>{{ $product->description }}</p>
-                            @endif
+                            <div class="col-md-12">
+                                @if($product->description != null)
+                                    <h3>Keterangan </h3>
+                                    <p>{{ $product->description }}</p>
+                                @endif
+                            </div>
 
+                            <div class="col-md-12" style="margin-top: 20px">
                             @if($product->cara_penggunaan != null)
-                                <h3>Cara Penggunaan :</h3>
-                                <p>{{ $product->cara_penggunaan }}</p>
+                                <h3>Cara Penggunaan </h3>
+                                <p>{!! $product->cara_penggunaan !!}</p>
                             @endif
+                            </div>
                             
-                            @if($product->howtouse != null)
-                                <h3>How to Use :</h3>
-                                <p>{{ $product->howtouse }}</p>
+                            <div class="col-md-12" style="margin-top: 20px">
+                            @if($product->suitedto != null)
+                                <h3>Cocok Untuk </h3>
+                                <p>{{ $product->suitedto }}</p>
                             @endif
+                            </div>
                             
-                            @if($product->howtouse != null)
-                                <h3>Ingredients :</h3>
+                            <div class="col-md-12" style="margin-top: 20px">
+                            @if($product->ingredients != null)
+                                <h3>Bahan </h3>
                                 <p>{!! $product->ingredients !!}</p>
                             @endif
+                            </div>
                             
-                            @if($product->howtouse != null)
-                                <h3>key ingredients :</h3>
+                            <div class="col-md-12" style="margin-top: 20px">
+                            @if($product->keyingredients != null)
+                                <h3>Bahan Utama</h3>
                                 <p>{!! $product->keyingredients !!}</p>
                             @endif
+                            </div>
                             
                         </div>
                   </div>
