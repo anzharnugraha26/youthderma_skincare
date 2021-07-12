@@ -8,6 +8,6 @@ class Product extends Model
 {
     protected $fillable = [
         'name', 'description', 'howtouse', 'suitedto' , 'skinfeel' , 
-        'keyingredients','ingredients','image', 'ml','price', 'weight'
+        'keyingredients','ingredients','image', 'ml','price', 'weight', 'cara_penggunaan' , 'bpom'
     ];
 }

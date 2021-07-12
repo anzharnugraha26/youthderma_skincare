@@ -39,6 +39,11 @@
                         </div>
 
                         <div class="form-group">
+                          <label for="exampleInputEmail1">Cara Penggunaan</label>
+                          <textarea class="form-control" id="exampleInputEmail1" placeholder="Enter Name" name="cara_penggunaan" ></textarea>
+                        </div>
+
+                        <div class="form-group">
                             <label for="exampleInputEmail1">ML</label>
                             <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter ML" name="ml">
                         </div>
@@ -66,6 +71,16 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Description</label>
                             <textarea  class="form-control" id="exampleInputEmail1" placeholder="Enter Description" name="description"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">bpom</label>
+                          <input type="text"  class="form-control" id="exampleInputEmail1" placeholder="Enter Description" name="bpom">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">berat</label>
+                          <input type="text"  class="form-control" id="exampleInputEmail1" placeholder="Enter Description" name="weight" value=""> 
                         </div>
 
                         <div class="form-group">

@@ -50,14 +50,14 @@
                                 <h5>Description</h5>
                                 <p>{{$product->description}}</p>
                             </div>
+                            <hr>
+                            @if($product->bpom != null)
                             <div class="product-single__description rte">
-                                <h5>Suited To</h5>
-                                <p>{{$product->suitedto}}</p>
+                                <h5>BPOM : {{ $product->bpom }}</h5>
+    
                             </div>
-                            <div class="product-single__description rte">
-                                <h5>How To Use</h5>
-                                <p>{{$product->howtouse}}</p>
-                            </div>
+                            @endif
+
                             @if(Auth::check())
 
                             <form method="post" action="{{url('add-carts/' . $product->id)}}"  class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">

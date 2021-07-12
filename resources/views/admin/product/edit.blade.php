@@ -40,6 +40,11 @@
                         </div>
 
                         <div class="form-group">
+                          <label for="exampleInputEmail1">Cara Penggunaan</label>
+                          <textarea class="form-control" id="exampleInputEmail1" placeholder="Enter Name" name="cara_penggunaan" >{{ $product->cara_penggunaan }}</textarea>
+                        </div>
+
+                        <div class="form-group">
                             <label for="exampleInputEmail1">ML</label>
                             <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter ML" name="ml" value="{{$product->ml}}">
                         </div>
@@ -67,6 +72,16 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Description</label>
                             <textarea  class="form-control" id="exampleInputEmail1" placeholder="Enter Description" name="description"> {{$product->description}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">bpom</label>
+                          <input type="text"  class="form-control" id="exampleInputEmail1" placeholder="Enter Description" name="bpom" value="{{ $product->bpom }}"> 
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">berat</label>
+                          <input type="text"  class="form-control" id="exampleInputEmail1" placeholder="Enter Description" name="weight" value="{{ $product->weight }}"> 
                         </div>
 
                         <div class="form-group">
