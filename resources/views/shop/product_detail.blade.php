@@ -1,5 +1,46 @@
 @extends('layouts.shop')
 @section('content')
+<style>
+    body {font-family: Arial;}
+    
+    /* Style the tab */
+    .tab {
+      overflow: hidden;
+      border: 1px solid #8AA385;
+      background-color: #8AA385;
+    }
+    
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 14px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+    
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #8AA385;
+    }
+    
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: white;
+    }
+    
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      font-size: 15px;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+    </style>
 
 <div id="page-content">
     <!--MainContent-->
@@ -38,7 +79,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-12" style="margin-top: 15%">
                             <div class="product-single__meta">
-                                <h1 class="product-single__title">{{$product->name}}</h1>
+                                <h1>{{$product->name}}</h1>
                                 <p class="product-single__price product-single__price-product-template">
                                     <span class="visually-hidden">Regular price</span>
                                    
@@ -46,6 +87,7 @@
                                         <span id="ProductPrice-product-template"><span class="money">{{ 'Rp.' . number_format($product->price) }}</span></span>
                                     </span>
                                 </p>
+                            </div>
                             <div class="product-single__description rte">
                                 <h5>Description</h5>
                                 <p>{{$product->description}}</p>
@@ -58,106 +100,122 @@
                             </div>
                             @endif
 
-                            @if(Auth::check())
-
-                            <form method="post" action="{{url('add-carts/' . $product->id)}}"  class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
-
-                                @csrf
-                                <div class="product-action clearfix">
-                                    <div class="product-form__item--quantity">
-                                        <div class="wrapQtyBtn">
-                                            <div class="qtyField">
-                                                <input type="hidden" value="{{$product->id}}" name="product_id">
-                                                {{-- <input type="hidden" value="{{$product->name}}" name="product_name">
-                                                <input type="hidden" value="{{$product->price}}" name="product_price"> --}}
-                                                <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-                                                <input type="text" id="Quantity" name="qty" value="1" class="product-form__input qty">
-                                                <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>                                
-                                    <div class="product-form__item--submit" >
-                                        <button class="btn product" style="background-color: #8AA385">
-                                            Add to cart
-                                        </button>
-                                    </div>
-                                </div>
+                            
+                            <div class="card">
+                                <br>
+                                @if(Auth::check())
                                 
-                                <!-- End Product Action -->
-                            </form>
+                                    <form method="post" action="{{url('add-carts/' . $product->id)}}"  class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
 
-                            @else 
-                            <form method="post" action="{{url('add-carts/' . $product->id)}}"  class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
-                                @csrf
-                                <div class="product-action clearfix">
-                                    <div class="product-form__item--quantity">
-                                        <div class="wrapQtyBtn">
-                                            <div class="qtyField">
-                                                <input type="hidden" value="{{$product->id}}" name="product_id">
-                                                {{-- <input type="hidden" value="{{$product->name}}" name="product_name">
-                                                <input type="hidden" value="{{$product->price}}" name="product_price"> --}}
-                                                <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-                                                <input type="text" id="Quantity" name="qty" value="1" class="product-form__input qty">
-                                                <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                                        @csrf
+                                        <div class="product-action clearfix" style="margin-left: 20px;margin-right: 20px;">
+                                            <div class="product-form__item--quantity">
+                                                <div class="wrapQtyBtn">
+                                                    <div class="qtyField">
+                                                        <input type="hidden" value="{{$product->id}}" name="product_id">
+                                                        {{-- <input type="hidden" value="{{$product->name}}" name="product_name">
+                                                        <input type="hidden" value="{{$product->price}}" name="product_price"> --}}
+                                                        <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                                        <input type="text" id="Quantity" name="qty" value="1" class="product-form__input qty">
+                                                        <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>                                
+                                            <div class="product-form__item--submit" >
+                                                <button class="btn product" style="background-color: #8AA385">
+                                                    Add to cart
+                                                </button>
                                             </div>
                                         </div>
-                                    </div>                                
-                                    <div class="product-form__item--submit">
-                                        <button class="btn product">
-                                            Add to cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                             @endif
+                                        
+                                        <!-- End Product Action -->
+                                    </form>
+
+                                    @else 
+                                    <form method="post" action="{{url('add-carts/' . $product->id)}}"  class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="product-action clearfix" style="margin-left: 20px;margin-right: 20px;">
+                                            <div class="product-form__item--quantity">
+                                                <div class="wrapQtyBtn">
+                                                    <div class="qtyField">
+                                                        <input type="hidden" value="{{$product->id}}" name="product_id">
+                                                        {{-- <input type="hidden" value="{{$product->name}}" name="product_name">
+                                                        <input type="hidden" value="{{$product->price}}" name="product_price"> --}}
+                                                        <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                                        <input type="text" id="Quantity" name="qty" value="1" class="product-form__input qty">
+                                                        <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>                                
+                                            <div class="product-form__item--submit">
+                                                <button class="btn product" style="background-color: #8AA385">
+                                                    Add to cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                @endif
+                            </div>
+
                             <div class="display-table shareRow">
                                     <div class="display-table-cell medium-up--one-third">
                                         <div class="wishlist-btn">
                                             <a class="wishlist add-to-wishlist" href="#" title="Add to Wishlist"><i class="icon anm anm-heart-l" aria-hidden="true"></i> <span>Add to Wishlist</span></a>
                                         </div>
                                     </div>
-                                    <div class="display-table-cell text-right">
-                                        <div class="social-sharing">
-                                            <a target="_blank" href="#" class="btn btn--small btn--secondary btn--share share-facebook" title="Share on Facebook">
-                                                <i class="fa fa-facebook-square" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">Share</span>
-                                            </a>
-                                            <a target="_blank" href="#" class="btn btn--small btn--secondary btn--share share-twitter" title="Tweet on Twitter">
-                                                <i class="fa fa-twitter" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">Tweet</span>
-                                            </a>
-                                            <a href="#" title="Share on google+" class="btn btn--small btn--secondary btn--share" >
-                                                <i class="fa fa-google-plus" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">Google+</span>
-                                            </a>
-                                            <a target="_blank" href="#" class="btn btn--small btn--secondary btn--share share-pinterest" title="Pin on Pinterest">
-                                                <i class="fa fa-pinterest" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">Pin it</span>
-                                            </a>
-                                            <a href="#" class="btn btn--small btn--secondary btn--share share-pinterest" title="Share by Email" target="_blank">
-                                                <i class="fa fa-envelope" aria-hidden="true"></i> <span class="share-title" aria-hidden="true">Email</span>
-                                            </a>
-                                         </div>
-                                    </div>
-                                </div>
+                            </div>
                         </div>
                 </div>
             </div>
 
-            <div class="tabs-listing">
-                <div class="tab-container" style="margin-top: 40px">
-                    <h2>Detail Product</h2><a href="#tab1" class="tablink">Product Reviews</a>
-                    <hr>
-                    <div id="tab1" class="tab-content">
-                        <div class="product-description rte">
-                            <h3>Skin Feel</h3>
-                            <p>{{$product->skinfeel}}</p>
-                            <h3> Key Ingredients</h3>
-                            {!!$product->keyingredients!!} 
-                            <h3>Ingredients.</h3>
-                            {!!$product->ingredients!!}
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
+            <div class="card-body">
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Cara Penggunaan</button>
+                    <button class="tablinks" onclick="openCity(event, 'Paris')">Informasi Produk</button>
+                  </div>
+                  
+                  <div id="London" class="tabcontent">
+                      <div class="card-body">
+                          <h3>Cara Penggunaan :</h3>
+                          <p>{{ $product->cara_penggunaan }}</p>
+                      </div>
+                  </div>
+                  
+                  <div id="Paris" class="tabcontent">
+                        <div class="card-body">
+                            @if($product->description != null)
+                                <h3>Keterangan :</h3>
+                                <p>{{ $product->description }}</p>
+                            @endif
+
+                            @if($product->cara_penggunaan != null)
+                                <h3>Cara Penggunaan :</h3>
+                                <p>{{ $product->cara_penggunaan }}</p>
+                            @endif
+                            
+                            @if($product->howtouse != null)
+                                <h3>How to Use :</h3>
+                                <p>{{ $product->howtouse }}</p>
+                            @endif
+                            
+                            @if($product->howtouse != null)
+                                <h3>Ingredients :</h3>
+                                <p>{!! $product->ingredients !!}</p>
+                            @endif
+                            
+                            @if($product->howtouse != null)
+                                <h3>key ingredients :</h3>
+                                <p>{!! $product->keyingredients !!}</p>
+                            @endif
+                            
+                        </div>
+                  </div>
+                  
+                </div> 
+            </div>
+        
 
         <div class="section">
             <div class="container">
@@ -245,5 +303,24 @@
 
 
 
+  
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
 
 @endsection
