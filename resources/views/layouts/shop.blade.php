@@ -273,7 +273,7 @@
         </div>
     </div> <!-- End footer bottom area --> --}}
    
-    <!-- Latest jQuery form server -->
+    {{-- <!-- Latest jQuery form server -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
     
     <!-- Bootstrap JS form CDN -->
@@ -291,9 +291,11 @@
     
     <!-- Slider -->
     <script type="text/javascript" src="{{asset('shop-master/js/bxslider.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('shop-master/js/script.slider.js')}}"></script>
+	<script type="text/javascript" src="{{asset('shop-master/js/script.slider.js')}}"></script> --}}
   </body>
 </html>
+
+
 <footer id="footer" class="footer-2">
     
   <div class="newsletter-section">

@@ -51,7 +51,7 @@
                                 <p>{{$product->description}}</p>
                             </div>
                             <hr>
-                            @if($product->bpom != null)
+                            @if($product != null)
                             <div class="product-single__description rte">
                                 <h5>BPOM : {{ $product->bpom }}</h5>
     
