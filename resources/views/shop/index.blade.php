@@ -6,7 +6,7 @@
         <div class="home-slideshow">
             <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/1.jpg')}}" src="{{asset('image/shop-slider/home.jpg')}}" alt="Shop Our New Collection" title="Shop Our New Collection" />
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b1.jpg')}}" src="{{asset('image/shop-slider/home.jpg')}}" alt="Shop Our New Collection" title="Shop Our New Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="container">
@@ -22,39 +22,71 @@
             </div>
             <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/2.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
-                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
-                        <div class="slideshow__text-content middle">
-                            <div class="container">
-                                {{-- <div class="wrap-caption center">
-                                    <h2 class="h1 mega-title slideshow__title">Fashion &amp; Show</h2>
-                                    <span class="mega-subtitle slideshow__subtitle">A World Fashion and Trendy Fashion Clother's</span>
-                                    <span class="btn">Shop now</span>
-                                </div> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slide">
-                <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/3.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
-                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
-                        <div class="slideshow__text-content middle">
-                            <div class="container">
-                                {{-- <div class="wrap-caption center">
-                                    <h2 class="h1 mega-title slideshow__title">Fashion &amp; Show</h2>
-                                    <span class="mega-subtitle slideshow__subtitle">A World Fashion and Trendy Fashion Clother's</span>
-                                    <span class="btn">Shop now</span>
-                                </div> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slide">
-                <div class="blur-up lazyload">
                     <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/4.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
+                        <div class="slideshow__text-content middle">
+                            <div class="container">
+                                {{-- <div class="wrap-caption center">
+                                    <h2 class="h1 mega-title slideshow__title">Fashion &amp; Show</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">A World Fashion and Trendy Fashion Clother's</span>
+                                    <span class="btn">Shop now</span>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b2.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
+                        <div class="slideshow__text-content middle">
+                            <div class="container">
+                                {{-- <div class="wrap-caption center">
+                                    <h2 class="h1 mega-title slideshow__title">Fashion &amp; Show</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">A World Fashion and Trendy Fashion Clother's</span>
+                                    <span class="btn">Shop now</span>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b3.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
+                        <div class="slideshow__text-content middle">
+                            <div class="container">
+                                {{-- <div class="wrap-caption center">
+                                    <h2 class="h1 mega-title slideshow__title">Fashion &amp; Show</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">A World Fashion and Trendy Fashion Clother's</span>
+                                    <span class="btn">Shop now</span>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b4.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
+                        <div class="slideshow__text-content middle">
+                            <div class="container">
+                                {{-- <div class="wrap-caption center">
+                                    <h2 class="h1 mega-title slideshow__title">Fashion &amp; Show</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">A World Fashion and Trendy Fashion Clother's</span>
+                                    <span class="btn">Shop now</span>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b5.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="container">
@@ -154,8 +186,8 @@
             <div class="hero__inner">
                 <div class="container">
                     <div class="wrap-text left text-small font-bold">
-                        <h2 class="h2 mega-title">Physician Formulated Skincare</h2>
-                        <div class="rte-setting mega-subtitle">Our Skincare essentials are designed to make you look and feel your glowy</div>
+                        <h2 class="h2 mega-title" style="font-family: Century Gothic;">Physician Formulated Skincare</h2>
+                        <div class="rte-setting mega-subtitle" style="font-family: Century Gothic;">Our Skincare essentials are designed to make you look and feel your glowy</div>
                         <a href="{{url("product")}}" class="btn">Shop Now</a>
                     </div>
                 </div>
