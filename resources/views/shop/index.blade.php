@@ -6,7 +6,7 @@
         <div class="home-slideshow">
             <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b1.jpg')}}" src="{{asset('image/shop-slider/home.jpg')}}" alt="Shop Our New Collection" title="Shop Our New Collection" />
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b1.jpg')}}" src="{{asset('image/shop-slider/b1.jpg')}}" alt="Shop Our New Collection" title="Shop Our New Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="container">
@@ -22,7 +22,7 @@
             </div>
             <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/4.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/4.jpg')}}" src="{{asset('image/shop-slider/4.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="container">
@@ -38,7 +38,7 @@
             </div>
             <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b2.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b2.jpg')}}" src="{{asset('image/shop-slider/b2.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="container">
@@ -54,7 +54,7 @@
             </div>
             <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b3.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b3.jpg')}}" src="{{asset('image/shop-slider/b3.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="container">
@@ -70,7 +70,7 @@
             </div>
             <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b4.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b4.jpg')}}" src="{{asset('image/shop-slider/b4.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="container">
@@ -86,7 +86,7 @@
             </div>
             <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b5.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/main_home.jpg')}}" src="{{asset('image/shop-slider/main_home.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="container">
@@ -209,57 +209,90 @@
                         
                     </div>
                 </div>    
+                
+
                 <div class="row img-grid-banner1">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-1">
+                    <div class="col-md-4" style="margin-top: 5%">
                         <div class="inner topright">
                             <a href="#">	
-                                   <img data-src="{{asset('image/gallery/1a.JPG')}}" src="{{asset('image/gallery/1a.JPG')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                <img data-src="{{asset('image/model/11.jpg')}}" src="{{asset('image/model/11.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload"  />
                                 {{-- <div class="ttl">
-                                    Shop <h5>Halloween Look</h5>
+                                    Shop <h5>Heeled Boots</h5>
                                 </div> --}}
                             </a>
-                         </div>
+                        </div>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-2">
+                    <div class="col-md-8">
                         <div class="row">
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 image-banner-3">
+                            <div class="col-md-4" style="margin-top: 10px">
                                 <div class="inner topright">
                                     <a href="#">	
-                                        <img data-src="{{asset('image/gallery/1b.jpg')}}" src="{{asset('image/gallery/1b.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                        <img data-src="{{asset('image/model/8.jpg')}}" src="{{asset('image/model/8.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
                                         {{-- <div class="ttl">
                                             Shop <h5>Heeled Boots</h5>
                                         </div> --}}
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                                <div class="inner btmleft">
+                            <div class="col-md-4" style="margin-top: 10px">
+                                <div class="inner topright">
                                     <a href="#">	
-                                        <img data-src="{{asset('image/gallery/1c.jpg')}}" src="{{asset('image/gallery/1c.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                        <img data-src="{{asset('image/model/5.jpg')}}" src="{{asset('image/model/5.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
                                         {{-- <div class="ttl">
-                                            Shop Cool <h5>Caps</h5>
+                                            Shop <h5>Heeled Boots</h5>
                                         </div> --}}
                                     </a>
                                 </div>
-                            </div>   
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-4">
-                                <div class="inner center">
+                            </div>
+                            <div class="col-md-4" style="margin-top: 10px">
+                                <div class="inner topright">
                                     <a href="#">	
-                                        <img data-src="{{asset('image/gallery/1d.jpg')}}" src="{{asset('image/gallery/1d.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                        <img data-src="{{asset('image/model/7.jpg')}}" src="{{asset('image/model/7.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
                                         {{-- <div class="ttl">
-                                            Hot Summer Collection <h5>Sun Glasses, Shoes and more</h5>
+                                            Shop <h5>Heeled Boots</h5>
                                         </div> --}}
                                     </a>
-                                 </div>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="row" style="margin-top: 10px">
+                            <div class="col-md-4" style="margin-top: 10px">
+                                <div class="inner topright">
+                                    <a href="#">	
+                                        <img data-src="{{asset('image/model/3.jpg')}}" src="{{asset('image/model/3.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                        {{-- <div class="ttl">
+                                            Shop <h5>Heeled Boots</h5>
+                                        </div> --}}
+                                    </a>
+                                </div>
                             </div>
+                            <div class="col-md-4" style="margin-top: 10px">
+                                <div class="inner topright">
+                                    <a href="#">	
+                                        <img data-src="{{asset('image/model/9.jpg')}}" src="{{asset('image/model/9.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                        {{-- <div class="ttl">
+                                            Shop <h5>Heeled Boots</h5>
+                                        </div> --}}
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="margin-top: 10px">
+                                <div class="inner topright">
+                                    <a href="#">	
+                                        <img data-src="{{asset('image/model/10.jpg')}}" src="{{asset('image/model/10.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload" />
+                                        {{-- <div class="ttl">
+                                            Shop <h5>Heeled Boots</h5>
+                                        </div> --}}
+                                    </a>
+                                </div>
+                            </div>  
                         </div>
                     </div>
                 </div>
              
             </div>
         </div>
+        
     </div>
 
 

@@ -120,7 +120,7 @@
                           <li><a href="{{url("/")}}" class="site-nav lvl-2" style="color: white;text-transform: capitalize;">Home </a></li>
                           <li class="lvl1 parent dropdown"><a href="{{url("/products")}}" style="color: white;text-transform: capitalize;">Produk<i class="anm anm-angle-down-l"></i></a>
                             <ul class="dropdown">
-                                <?php $pr = DB::table('products')->get(); ?>
+                                <?php $pr = DB::table('products')->paginate(10); ?>
                                 @foreach ($pr as $item)            
                                 <li><a href="{{url('product-detail/' . $item->id)}}" class="site-nav">{{$item->name}}</a></li>
                                 @endforeach
