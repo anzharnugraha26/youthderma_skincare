@@ -6,20 +6,21 @@
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 footer-links">
             <h4 class="h4" style="color: white">PRODUK</h4>
             <ul>
-                <?php $p = DB::table('products')->get(); ?>
+                <?php $p = DB::table('products')->paginate(5); ?>
                 @foreach ($p as $item)
                     <li><a href="{{'product-detail/' . $item->id}}" style="color: white">{{$item->name}}</a></li>
                 @endforeach
+                <a href="{{ url('products') }}" style="color: white">All Products...</a>
             </ul>
         </div>
         
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 footer-links">
             <h4 class="h4" style="color: white">TERHUBUNG DENGAN KAMI</h4>
             <ul class="list--inline site-footer__social-icons social-icons">
-                <img src="{{asset('image/iconig.png')}}" style="margin-left: 5px">
-                <img src="{{asset('image/iconwa.png')}}" style="margin-left: 5px">
+                <a href="https://www.instagram.com/youthderma_id/" target="_blank"><img src="{{asset('image/iconig.png')}}" style="margin-left: 5px"></a>
+                <a href="https://wa.me/6282112100020?text=Hallo Youthderma Skincare" target="_blank"><img src="{{asset('image/iconwa.png')}}" style="margin-left: 5px"></a>
                 <img src="{{asset('image/icontelp.png')}}" style="margin-left: 5px">
-                <img src="{{asset('image/shopee.png')}}" style="margin-left: 5px" >
+                <a href="https://shopee.co.id/youthderma_skincare?categoryId=100630&itemId=8659310408&page=0&sortBy=sales" target="_blank"><img src="{{asset('image/shopee.png')}}" style="margin-left: 5px" ></a>
             </ul>
         </div>
         {{-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 footer-links">

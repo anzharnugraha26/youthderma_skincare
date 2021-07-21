@@ -6,7 +6,7 @@
         <div class="home-slideshow">
             <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b1.jpg')}}" src="{{asset('image/shop-slider/b1.jpg')}}" alt="Shop Our New Collection" title="Shop Our New Collection" />
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/m1.jpg')}}" src="{{asset('image/shop-slider/m1.jpg')}}" alt="Shop Our New Collection" title="Shop Our New Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="container">
@@ -36,6 +36,18 @@
                     </div>
                 </div>
             </div>
+            {{-- <div class="slide">
+                <div class="blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/m2.jpg')}}" src="{{asset('image/shop-slider/m2.jpg')}}" alt="Shop Our New Collection" title="Shop Our New Collection" />
+                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
+                        <div class="slideshow__text-content middle">
+                            <div class="container">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
             <div class="slide">
                 <div class="blur-up lazyload">
                     <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b2.jpg')}}" src="{{asset('image/shop-slider/b2.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
@@ -212,10 +224,10 @@
                 
 
                 <div class="row img-grid-banner1">
-                    <div class="col-md-4" style="margin-top: 5%">
+                    <div class="col-md-4" style="margin-top: 10px">
                         <div class="inner topright">
                             <a href="#">	
-                                <img data-src="{{asset('image/model/11.jpg')}}" src="{{asset('image/model/11.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload"  />
+                                <img data-src="{{asset('image/model/mo3.jpg')}}" src="{{asset('image/model/mo3.jpg')}}" alt="Gallery" title="Gallery" class="blur-up lazyload"  />
                                 {{-- <div class="ttl">
                                     Shop <h5>Heeled Boots</h5>
                                 </div> --}}
@@ -255,7 +267,7 @@
                                 </div>
                             </div>  
                         </div>
-                        <div class="row" style="margin-top: 10px">
+                        <div class="row" style="margin-top: 15px">
                             <div class="col-md-4" style="margin-top: 10px">
                                 <div class="inner topright">
                                     <a href="#">	
