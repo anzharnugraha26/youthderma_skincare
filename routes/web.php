@@ -47,6 +47,7 @@ Route::get('test', 'HomeController@test');
 
 Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin'], function () {
     Route::get('/', 'Admin\AdminController@index');
+    Route::get('/customers', 'Admin\AdminController@user');
     Route::resource('product', 'Admin\ProductController');
     Route::post('product/store', 'Admin\ProductController@store');
     Route::get('product/destroy/{id}', 'Admin\ProductController@destroy');
