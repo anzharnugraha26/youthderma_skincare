@@ -13,16 +13,48 @@
                 <div class="card-body">
                     <div class="row  mb-2 text-center">
                        
-                        <div class="col-md-3">
-                        <div class="card text-white bg-info mb-3 " style="max-width: 18rem;">
-                        <div class="card-header"></div>
-                        <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">Atas Nama </p>
-                        </div>
-                        </div>
-                        </div>
+                        <div class="col-md-4" style="margin-left: 35%">
+                        <div style="max-width: 18rem;">
                         
+                        <div class="card-body">
+                            <img src="{{asset('image/logo/bca.png')}}">
+                        <p>ATM BCA</p>
+                        <h5 class="card-title">6044611222</h5>
+                        <p class="card-text" style="font-size: 20px">Atas Nama : </p>
+                        <p class="card-text" style="font-size: 20px">pt citra utama andalan </p>
+                        </div>
+                        </div>
+                        </div>
+        
+                        {{-- <div class="col-md-4">
+                            <div style="max-width: 18rem;">
+                                <img src="{{asset('image/logo/bri.png')}}">
+                            <div class="card-body">
+                            <h5 class="card-title">ATM BRI</h5>
+                            <p class="card-text">Atas Nama </p>
+                            </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-4">
+                            <div style="max-width: 18rem;">
+                                <img src="{{asset('image/logo/mandiri.png')}}">
+                            <div class="card-body">
+                            <h5 class="card-title">ATM MANDIRI</h5>
+                            <p class="card-text">Atas Nama </p>
+                            </div>
+                            </div>
+                        </div> --}}
+        
+                        {{-- <div class="col-md-3">
+                            <div style="max-width: 18rem;">
+                            
+                            <div class="card-body">
+                            <h5 class="card-title">GOPAY</h5>
+                            <p class="card-text">Atas Nama </p>
+                            </div>
+                            </div>
+                        </div> --}}
                     </div>
                     <div class="row  mb-4">
                         <div class="col-md-12 text-center">

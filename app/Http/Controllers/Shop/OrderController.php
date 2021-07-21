@@ -52,6 +52,13 @@ class OrderController extends Controller
         return view('shop.order.konfirmasi', compact('order'));
     }
 
+    public function batal($id){
+        $order = Order::findOrFail($id);
+        $order->status_order_id = 6;
+        $order->save();
+
+        return redirect()->back();
+    }
   
     public function store(Request $request)
     {

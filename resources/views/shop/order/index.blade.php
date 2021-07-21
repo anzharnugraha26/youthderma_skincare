@@ -70,7 +70,7 @@
                                 <tr>
                                     <th class="text-left">Invoice</th>
                                     <th class="text-left">Status</th>
-                                    <th class="text-right">Total</th> 
+                                    <th class="text-left">Total</th> 
                                     <th class="text-center">&nbsp;Option</th>
                                 </tr>
                             </thead>
@@ -87,8 +87,8 @@
                                          {{ 'Rp.' . number_format($o->subtotal)}}
                                     </td>
                                     <td>
-                                        <a href="{{url('/shop/order/konfirmasi/' . $o->id)}}" class="btn btn-secondary btn--small  small--hide" style="background: green">bayar</a>
-                                        <button type="submit" name="update" class="btn btn-secondary btn--small cart-continue ml-2" style="background: red">Batalkan</button>
+                                        <a href="{{url('order/konfirmasi/' . $o->id)}}" class="btn btn-secondary btn--small  small--hide" style="background: green">bayar</a>
+                                        <a href="{{url('order/batal/' . $o->id)}}" class="btn btn-secondary btn--small  small--hide" style="background: red" onclick="return confirm('Yakin ingin membatalkan pesanan')">Batalkan</a>
                                     </td>
                                 </tr>
                                 @endforeach

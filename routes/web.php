@@ -34,6 +34,7 @@ Route::get('check-out', 'Shop\CheckOutController@index');
 
 Route::post('order-simpan', 'Shop\OrderController@store');
 Route::get('order/konfirmasi/{id}', 'Shop\OrderController@bayar');
+Route::get('order/batal/{id}', 'Shop\OrderController@batal');
 Route::get('order', 'Shop\OrderController@index');
 
 Route::post('/bukti-bayar/{id}', 'Shop\OrderController@kirimBukti');
