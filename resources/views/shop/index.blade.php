@@ -36,9 +36,9 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="slide">
+            <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/m2.jpg')}}" src="{{asset('image/shop-slider/m2.jpg')}}" alt="Shop Our New Collection" title="Shop Our New Collection" />
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/n1.jpg')}}" src="{{asset('image/shop-slider/n1.jpg')}}" alt="Shop Our New Collection" title="Shop Our New Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="container">
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
             <div class="slide">
                 <div class="blur-up lazyload">
                     <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b2.jpg')}}" src="{{asset('image/shop-slider/b2.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
@@ -66,7 +66,7 @@
             </div>
             <div class="slide">
                 <div class="blur-up lazyload">
-                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/b3.jpg')}}" src="{{asset('image/shop-slider/b3.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/n2.jpg')}}" src="{{asset('image/shop-slider/n2.jpg')}}" alt="Summer Bikini Collection" title="Summer Bikini Collection" />
                     <div class="slideshow__text-wrap slideshow__overlay classic middle">
                         <div class="slideshow__text-content middle">
                             <div class="container">
