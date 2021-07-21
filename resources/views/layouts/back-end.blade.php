@@ -122,14 +122,14 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{url("admin/booking")}}" class="nav-link  {{ 'admin/booking' == request()->path()? 'active' : ''}}">
               <i class="nav-icon fas fa-address-book"></i>
               <p>
                 Daftar Booking
               </p>
             </a>
-          </li>
+          </li> --}}
          
           {{-- <li class="nav-item">
             <a href="{{url("admin/subscribe-contactus")}}" class="nav-link  {{ 'admin/subscribe-contactus' == request()->path()? 'active' : ''}} ">
@@ -159,7 +159,7 @@
           </li> --}}
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fas fa-keyboard"></i>
+              <i class="nav-icon fas fa-address-book"></i>
               <p>
                 Transaksi 
                 <i class="fas fa-angle-left right"></i>
@@ -204,6 +204,16 @@
                 <a href="{{url("admin/transaksi-dikirim")}}" class="nav-link">
                   <?php $d = DB::table('orders')->where('status_order_id', 4)->count()?>
                   <p> Transaksi Di Kirim 
+                    @if($d > 0)  
+                  <span class="badge badge-info right"><?php echo $d;?></span>
+                  @endif
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url("admin/transaksi-dibatalkan")}}" class="nav-link">
+                  <?php $d = DB::table('orders')->where('status_order_id', 6)->count()?>
+                  <p> Transaksi Di Batalkan 
                     @if($d > 0)  
                   <span class="badge badge-info right"><?php echo $d;?></span>
                   @endif

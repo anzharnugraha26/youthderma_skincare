@@ -57,9 +57,11 @@ Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin']
     Route::get('transaksi-perlu-dicek', 'Admin\TransaksiController@perludicek');
     Route::get('transaksi-perlu-dikirim', 'Admin\TransaksiController@perludikirim');
     Route::get('transaksi-dikirim', 'Admin\TransaksiController@dikirim');
+    Route::get('transaksi-dibatalkan', 'Admin\TransaksiController@batal');
     Route::get('transaksi-selesai', 'Admin\TransaksiController@selesai');
     Route::get('transaksi-detail/{id}', 'Admin\TransaksiController@detail');
     Route::get('transaksi/konfirmasi/{id}','Admin\TransaksiController@konfirmasi');
+    Route::get('transaksi-destroy/{id}','Admin\TransaksiController@destroy');
     Route::post('/input-resi/{id}','Admin\TransaksiController@inputresi');
 
 });

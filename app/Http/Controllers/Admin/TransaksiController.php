@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\DetailOrder;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -158,6 +159,31 @@ class TransaksiController extends Controller
                 );
 
         return view('admin.transaksi.selesai', $data);
+    }
+
+    public function batal()
+    {
+        $order = DB::table('orders')
+        ->join('status_order', 'status_order.id', '=', 'orders.status_order_id')
+        ->join('users', 'users.id', '=', 'orders.user_id')
+        ->select('orders.*', 'status_order.name', 'users.name as nama_pemesan')
+        ->where('orders.status_order_id', 6)
+        ->orderBy('id', 'DESC')->get();
+        $data = array(
+                'orderbaru' => $order
+                );
+
+        return view('admin.transaksi.batal', $data);
+    }
+
+    public function destroy($id){
+        $order = Order::where('id',$id)->first();
+        $order->delete();
+
+        DetailOrder::where('order_id', $order->id)->delete();
+        
+        return redirect()->back();
+
     }
 
 }
