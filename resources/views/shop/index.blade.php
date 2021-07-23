@@ -112,6 +112,30 @@
                     </div>
                 </div>
             </div>
+            <div class="slide">
+                <div class="blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/baru1.png')}}" src="{{asset('image/shop-slider/baru1.png')}}" alt="Shop Our New Collection" title="Shop Our New Collection" />
+                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
+                        <div class="slideshow__text-content middle">
+                            <div class="container">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="blur-up lazyload">
+                    <img class="blur-up lazyload" data-src="{{asset('image/shop-slider/baru2.png')}}" src="{{asset('image/shop-slider/baru2.png')}}" alt="Shop Our New Collection" title="Shop Our New Collection" />
+                    <div class="slideshow__text-wrap slideshow__overlay classic middle">
+                        <div class="slideshow__text-content middle">
+                            <div class="container">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
