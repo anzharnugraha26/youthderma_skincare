@@ -344,7 +344,8 @@
             </div>
             <div class="grid-products">
                 <div class="row">
-                    @foreach ($product as $item)
+                    <?php $products = DB::table('products')->paginate(5); ?>
+                    @foreach ($products as $item)
                     <div class="col-6 col-sm-2 col-md-4  item">
                        
                         <div class="product-image">
@@ -393,8 +394,12 @@
                     @endforeach
                    
                 </div>
-                </div>
 
+            </div>
+            <div class="pagination">
+                <ul>
+                    {{ $products->links() }}
+                </ul>
             </div>
        </div>
     </div>	
