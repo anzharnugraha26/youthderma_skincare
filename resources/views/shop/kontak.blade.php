@@ -35,19 +35,28 @@
         <div class="row">
             <div class="col-12 col-sm-12 col-md-8 col-lg-8 mb-4">
                 <h2>Drop Us A Line</h2>
-                <p>Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500 </p>
                 <div class="formFeilds contact-form form-vertical">
-                  <form action="http://annimexweb.com/items/belle/assets/php/mail.php" method="post"  id="contact_form" class="contact-form">	
+                  <form action="{{ url("sendkontak") }}" method="post">
+                    @csrf	
                   <div class="row">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                         <div class="form-group">
+                            @if(Auth::check())
+                          <input type="text" id="ContactFormName" name="name" placeholder="Name" value="{{ Auth::user()->name }}" required="">
+                          @else
                           <input type="text" id="ContactFormName" name="name" placeholder="Name" value="" required="">
+                          @endif
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                         <div class="form-group">
-                        <input type="email" id="ContactFormEmail" name="email" placeholder="Email" value="" required="">                        	
-                        </div>
+                            @if(Auth::check())
+                        <input type="email" id="ContactFormEmail" name="email" placeholder="Email" required="" value="{{ Auth::user()->email }}">                        	
+                            @else
+                        <input type="email" id="ContactFormEmail" name="email" placeholder="Email" required="" value="">                        	
+                            @endif
+                    </div>
+                        
                     </div>
                   </div>
                   <div class="row">
@@ -65,7 +74,7 @@
                   <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="form-group">
-                        <textarea required="" rows="10" id="ContactFormMessage" name="message" placeholder="Your Message"></textarea>
+                        <textarea required="" rows="10" id="ContactFormMessage" name="msg" placeholder="Your Message"></textarea>
                         </div>
                     </div>  
                   </div>

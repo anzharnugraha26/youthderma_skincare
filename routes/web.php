@@ -42,6 +42,8 @@ Route::get('/order-detail/{id}', 'Shop\OrderController@show');
 Route::post('kurir', 'Shop\CheckOutController@store');
 Route::get('gallery', 'ShopController@gallery');
 
+Route::post('sendkontak' , 'ContactController@store');
+
 Route::get('test', 'HomeController@test');
 
 
