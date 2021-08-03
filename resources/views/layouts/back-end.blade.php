@@ -122,41 +122,6 @@
               </p>
             </a>
           </li>
-          {{-- <li class="nav-item">
-            <a href="{{url("admin/booking")}}" class="nav-link  {{ 'admin/booking' == request()->path()? 'active' : ''}}">
-              <i class="nav-icon fas fa-address-book"></i>
-              <p>
-                Daftar Booking
-              </p>
-            </a>
-          </li> --}}
-         
-          {{-- <li class="nav-item">
-            <a href="{{url("admin/subscribe-contactus")}}" class="nav-link  {{ 'admin/subscribe-contactus' == request()->path()? 'active' : ''}} ">
-              <i class="nav-icon far fa-comments"></i>
-              <p>
-                Subscribe and Contact US
-              </p>
-            </a>
-          </li> --}}
-
-          {{-- <li class="nav-item">
-            <a href="{{url("admin/blog")}}" class="nav-link  {{ 'admin/blog' == request()->path()? 'active' : ''}} {{'admin/blog/create-content-blog' == request()->path()? 'active' : ''}}">
-              <i class="nav-icon fab fa-blogger"></i>
-              <p>
-                Blog
-              </p>
-            </a>
-          </li> --}}
-
-          {{-- <li class="nav-item">
-            <a href="{{url("admin/gallery")}}" class="nav-link  {{ 'admin/gallery' == request()->path()? 'active' : ''}} ">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                Gallery
-              </p>
-            </a>
-          </li> --}}
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-address-book"></i>
@@ -229,33 +194,23 @@
 
             </ul>
           </li>
-
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fas fa-keyboard"></i>
+          <hr>
+          <li class="nav-item">
+            <a href="{{url("admin/product")}}" class="nav-link  {{ 'admin/product' == request()->path()? 'active' : ''}} {{ 'admin/product/create' == request()->path()? 'active' : ''}}">
+              <i class="nav-icon far fa-envelope"></i>
               <p>
-                  Input 
-                <i class="fas fa-angle-left right"></i>
-               
+               Contact Us
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url("admin/treatment")}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Treatmnet</p>
-                </a>
-              </li>
-              {{-- <li class="nav-item">
-                <a href="{{url("admin/ingredients")}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Input Ingredients</p>
-                </a>
-              </li> --}}
-            </ul>
           </li>
-          
-          <hr>
+          <li class="nav-item">
+            <a href="{{url("admin/product")}}" class="nav-link  {{ 'admin/product' == request()->path()? 'active' : ''}} {{ 'admin/product/create' == request()->path()? 'active' : ''}}">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+               Admin Setting
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>

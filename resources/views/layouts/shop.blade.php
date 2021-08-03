@@ -133,6 +133,7 @@
                           <li class="lvl-2"><a href="{{url("/carts")}}" class="site-nav lvl-2" style="color: white;text-transform: capitalize;">Carts |
                             <span><?php $p = DB::table('keranjangs')->where('user_id', Auth::user()->id)->count(); echo $p;?></span></a></li>
                             <li class="lvl-2"><a href="{{url("/order")}}" class="site-nav lvl-2" style="color: white;text-transform: capitalize;">Order</a></li>
+                            <li class="lvl-2"><a href="{{url("/order")}}" class="site-nav lvl-2" style="color: white;text-transform: capitalize;">Confirm Payment</a></li>
                           @endif
                           <li class="lvl-2"><a href="{{url("/gallery")}}" class="site-nav lvl-2" style="color: white;text-transform: capitalize;">Gallery</a></li>
                           <li class="lvl-2"><a href="{{url("/contact-us")}}" class="site-nav lvl-2" style="color: white;text-transform: capitalize;">Kontak</a></li>
