@@ -18,7 +18,7 @@ Route::get('/product-detail/{id}', 'ShopController@productDetail');
 
 Route::get('contact-us', 'ShopController@kontakUs');
 
-Route::get('/carts' , 'Shop\CartController@index');
+Route::get('/carts' , 'Shop\CartController@create');
 Route::get('/cart/remove/{id}', 'Shop\CartController@destroy'); 
 Route::post('add-carts/{id}', 'Shop\CartController@store');
 Route::post('/carts/update', 'Shop\CartController@update');
@@ -45,6 +45,7 @@ Route::get('gallery', 'ShopController@gallery');
 Route::post('sendkontak' , 'ContactController@store');
 
 Route::get('test', 'HomeController@test');
+Route::get('test-payment', 'PaymentgetwayController@test');
 
 
 Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin'], function () {

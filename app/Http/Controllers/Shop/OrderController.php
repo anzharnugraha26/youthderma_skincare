@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Shop;
 
+use App\BankInfo;
 use App\DetailOrder;
 use App\Http\Controllers\Controller;
 use App\Keranjang;
@@ -74,6 +75,15 @@ class OrderController extends Controller
                 // 'pesan' => "test"
         ]);
 
+        $bankinfo = BankInfo::create([
+            'order_id' => $order->id,
+            'user_id' => Auth::user()->id,
+            'name' => $request->cardname,
+            'bank' => $request->bank,
+            'number' => $request->number,
+            'email' => $request->cvv 
+        ]);
+
         $order = Order::where('invoice', $request->invoice)->first();
         $barang = Keranjang::where('user_id', Auth::user()->id)->get();
         foreach ($barang as  $brg) {
@@ -90,7 +100,10 @@ class OrderController extends Controller
             'invoice' => $order->invoice,
             'subtotal' => $order->subtotal,
             'email' => Auth::user()->email,
-            'date' => date('Ymd')
+            'date' => date('Ymd'),
+            'bank_name' => $bankinfo->bank,
+            'atsname' => $bankinfo->name,
+            'no_rek' => $bankinfo->number
         );
         
        

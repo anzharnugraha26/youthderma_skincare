@@ -69,74 +69,6 @@
                 </div>
             </div>
 
-
-
-
-            {{-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 sm-margin-30px-bottom">
-                <div class="create-ac-content bg-light-gray padding-20px-all">
-                    <form>
-                        <fieldset>
-                            <h2 class="login-title mb-3">Billing details</h2>
-                            <div class="row">
-                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-firstname"> Name <span class="required-f">*</span></label>
-                                    <input name="name" value="{{Auth::user()->name}}" id="input-firstname" type="text" disabled>
-                                </div>
-                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-email">E-Mail <span class="required-f">*</span></label>
-                                    <input name="email" value="{{Auth::user()->email}}" id="input-email" type="email" disabled>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-telephone">Telephone <span class="required-f">*</span></label>
-                                    <input name="telephone" value="{{$alamat->phone}}" id="input-telephone" type="tel" disabled>
-                                </div>
-                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-telephone">Detail Address <span class="required-f">*</span></label>
-                                    <input name="telephone" value="{{$alamat->detail}}" id="input-telephone" type="tel" disabled>
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <fieldset>
-                            <div class="row">
-                                <div class="form-group col-md-6 col-lg-6 col-xl-6">
-                                    <label for="input-company">Province</label>
-                                    <input name="company" value="{{$alamat->prov}}" id="input-company" type="text">
-                                </div>
-                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-address-1">City <span class="required-f">*</span></label>
-                                    <input name="address_1" value="{{$alamat->kota}}" id="input-address-1" type="text">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                    <label for="input-postcode">Post Code <span class="required-f">*</span></label>
-                                    <input name="postcode" value="" id="input-postcode" type="text">
-                                </div>
-                               
-                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                               
-                                <a href="{{url('edit-address/' . Auth::user()->id)}}" class="">Edit Alamat</a>
-                               
-                            </div>
-                        </fieldset>
-
-                        <fieldset>
-                            
-                        </fieldset>
-
-                        <fieldset>
-                        </fieldset>
-                    </form>
-                </div>
-            </div> --}}
-
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="your-order-payment">
                     <div class="your-order">
@@ -210,39 +142,49 @@
                                                     <p>No Rek : 123121212121</p>
                                                 </div>
                                             </div>
+                                            {{-- <div class="card-body">
+                                                <div class="col">
+                                                    <div>
+                                                        <?php
+                                                        \Midtrans\Config::$serverKey = 'SB-Mid-server-52BfXyttd6q5XHlxWlgW66T-';
+                                                        \Midtrans\Config::$isProduction = false;
+                                                        \Midtrans\Config::$isSanitized = true;
+                                                        \Midtrans\Config::$is3ds = true;
+                                                        
+                                                        $params = array(
+                                                            'transaction_details' => array(
+                                                                'order_id' => rand(),
+                                                                'gross_amount' => $ongkir + $subtotal,
+                                                            ),
+                                                            'customer_details' => array(
+                                                                'first_name' => 'MR.',
+                                                                'last_name' =>  Auth::user()->name,
+                                                                'email' => Auth::user()->email,
+                                                                'phone' => $alamat->phone,
+                                                            ),
+                                                        );
+                                                        
+                                                        $snapToken = \Midtrans\Snap::getSnapToken($params);
+                                                  ?>
+                                                    <img src="{{asset('image/bank/bca.png')}}" style="width: 250px;height: 150px;" id="pay-button">
+                                                    </div>
+                                                    <p>Transfer Sebesar {{'Rp.' . number_format($ongkir + $subtotal)}}  </p>
+                                                    <p>No Rek : 123121212121</p>
+                                                </div>
+                                            </div> --}}
                                         </div>
-                                    </div>
-                                    {{-- <div class="card mb-2">
+                                    </div>  
+                                    <div class="card mb-2">
                                         <div class="card-header">
-                                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">Cheque Payment</a>
+                                            <a class="card-link" data-toggle="collapse" href="#collapseFour" aria-expanded="true"> Payment Information </a>
                                         </div>
-                                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                                            <div class="card-body">
-                                                <p class="no-margin font-15">Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-                                            </div>
-                                        </div>
-                                    </div> --}}
-                                    {{-- <div class="card margin-15px-bottom border-radius-none">
-                                        <div class="card-header">
-                                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree"> PayPal </a>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                            <div class="card-body">
-                                                <p class="no-margin font-15">Pay via PayPal; you can pay with your credit card if you don't have a PayPal account.</p>
-                                            </div>
-                                        </div>
-                                    </div> --}}
-                                    {{-- <div class="card mb-2">
-                                        <div class="card-header">
-                                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour"> Payment Information </a>
-                                        </div>
-                                        <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                        <div id="collapseFour" class="collapse show" data-parent="#accordion" style="">
                                             <div class="card-body">
                                                 <fieldset>
                                                     <div class="row">
                                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                                            <label for="input-cardname">Name on Card <span class="required-f">*</span></label>
-                                                            <input name="cardname" value="" placeholder="Card Name" id="input-cardname" class="form-control" type="text">
+                                                            <label for="input-cardname">Name<span class="required-f">*</span></label>
+                                                            <input name="cardname" value="{{Auth::user()->name}}" placeholder="Card Name" id="input-cardname" class="form-control" type="text">
                                                         </div>
                                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                             <label for="input-country">Credit Card Type <span class="required-f">*</span></label>
@@ -257,12 +199,12 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                                            <label for="input-cardno">Credit Card Number  <span class="required-f">*</span></label>
-                                                            <input name="cardno" value="" placeholder="Credit Card Number" id="input-cardno" class="form-control" type="text">
+                                                            <label for="input-cardno">Card Number  <span class="required-f">*</span></label>
+                                                            <input name="cardno" value="" placeholder="Card Number" id="input-cardno" class="form-control" type="text">
                                                         </div>
                                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                                            <label for="input-cvv">CVV Code <span class="required-f">*</span></label>
-                                                            <input name="cvv" value="" placeholder="Card Verification Number" id="input-cvv" class="form-control" type="text">
+                                                            <label for="input-cvv">Email Address<span class="required-f">*</span></label>
+                                                            <input name="cvv" value="" placeholder="Email Address" id="input-cvv" class="form-control" type="email">
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -271,16 +213,17 @@
                                                             <input type="date" name="exdate" class="form-control">
                                                         </div>
                                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                                            <img class="padding-25px-top xs-padding-5px-top" src="assets/images/payment-img.jpg" alt="card" title="card" />
+                                                            
                                                         </div>
                                                     </div>
                                                 </fieldset>
 
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                 </div>
                             </div>
+                            
                             <?php ?>
 
                             <input type="hidden" value="{{ $invoice }}" name="invoice">
@@ -402,5 +345,5 @@
         });
 
     });
-</script>
+</script>   
 @endsection
