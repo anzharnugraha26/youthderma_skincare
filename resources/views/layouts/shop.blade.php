@@ -342,7 +342,7 @@
 </script>
 @endif
 
-@if(Auth::check())
+{{-- @if(Auth::check())
 
 @if(Auth::user()->email_verified_at==null)
     <script>
@@ -354,7 +354,7 @@
         })
     </script>
 @endif
-@endif
+@endif --}}
 
 <!--For Newsletter Popup-->
 <script>
