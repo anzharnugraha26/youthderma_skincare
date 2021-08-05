@@ -1,6 +1,6 @@
 @extends('layouts.shop')
 @section('content')
-    
+
     <!--Body Content-->
     <div id="page-content">
     	<!--Page Title-->

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Shop;
 
+use App\Alamat;
 use App\BankInfo;
 use App\DetailOrder;
 use App\Http\Controllers\Controller;
@@ -63,57 +64,64 @@ class OrderController extends Controller
   
     public function store(Request $request)
     {
-        $order =  Order::create([
-            'invoice' => $request->invoice,
-                'user_id' => Auth::user()->id,
-                'user_email' => Auth::user()->email,
-                'phone' => $request->no_hp,
-                'subtotal'=> $request->subtotal,
-                'status_order_id' => 1,
-                'metode_pembayaran' => "trf",
-                'ongkir' => $request->ongkir,
-                // 'pesan' => "test"
-        ]);
 
-        $bankinfo = BankInfo::create([
-            'order_id' => $order->id,
-            'user_id' => Auth::user()->id,
-            'name' => $request->cardname,
-            'bank' => $request->bank,
-            'number' => $request->number,
-            'email' => $request->cvv 
-        ]);
-
-        $order = Order::where('invoice', $request->invoice)->first();
-        $barang = Keranjang::where('user_id', Auth::user()->id)->get();
-        foreach ($barang as  $brg) {
-            DetailOrder::create([
-                'order_id' => $order->id,
-                'product_id' => $brg->products_id,
-                'qty' => $brg->qty,
+        $alamat = Alamat::where('user_id', Auth::user()->id)->first();
+        if ($alamat == null) {
+            return redirect()->back()->with('alamat', "test");
+        } else {
+            $order =  Order::create([
+                'invoice' => $request->invoice,
+                    'user_id' => Auth::user()->id,
+                    'user_email' => Auth::user()->email,
+                    'phone' => $request->no_hp,
+                    'subtotal'=> $request->subtotal,
+                    'status_order_id' => 1,
+                    'metode_pembayaran' => "trf",
+                    'ongkir' => $request->ongkir,
+                    // 'pesan' => "test"
             ]);
+    
+            $bankinfo = BankInfo::create([
+                'order_id' => $order->id,
+                'user_id' => Auth::user()->id,
+                'name' => $request->cardname,
+                'bank' => $request->bank,
+                'number' => $request->number,
+                'email' => $request->cvv 
+            ]);
+    
+            $order = Order::where('invoice', $request->invoice)->first();
+            $barang = Keranjang::where('user_id', Auth::user()->id)->get();
+            foreach ($barang as  $brg) {
+                DetailOrder::create([
+                    'order_id' => $order->id,
+                    'product_id' => $brg->products_id,
+                    'qty' => $brg->qty,
+                ]);
+            }
+            
+            Keranjang::where('user_id', Auth::user()->id)->delete();
+    
+            $data = array(
+                'invoice' => $order->invoice,
+                'subtotal' => $order->subtotal,
+                'email' => Auth::user()->email,
+                'date' => date('Ymd'),
+                'bank_name' => $bankinfo->bank,
+                'atsname' => $bankinfo->name,
+                'no_rek' => $bankinfo->number
+            );
+            
+           
+            Mail::send('emailorder', $data, function ($message) {
+                $message->from(Auth::user()->email, Auth::user()->email);
+                $message->to('youthderma@gmail.com', 'Youthderma aesthetic Clinic');
+                $message->subject('Pesanan dari  :' . Auth::user()->email, Auth::user()->email);
+            });
+            return redirect('/order');
+            // dd($order); 
         }
-        
-        Keranjang::where('user_id', Auth::user()->id)->delete();
 
-        $data = array(
-            'invoice' => $order->invoice,
-            'subtotal' => $order->subtotal,
-            'email' => Auth::user()->email,
-            'date' => date('Ymd'),
-            'bank_name' => $bankinfo->bank,
-            'atsname' => $bankinfo->name,
-            'no_rek' => $bankinfo->number
-        );
-        
-       
-        Mail::send('emailorder', $data, function ($message) {
-            $message->from(Auth::user()->email, Auth::user()->email);
-            $message->to('youthderma@gmail.com', 'Youthderma aesthetic Clinic');
-            $message->subject('Pesanan dari  :' . Auth::user()->email, Auth::user()->email);
-        });
-        return redirect('/order');
-        // dd($order);
     }
 
     public function kirimBukti(Request $request, $id)
