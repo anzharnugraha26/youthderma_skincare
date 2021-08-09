@@ -21,10 +21,10 @@
                 
                 <div class="card-body">
                     <img src="{{asset('image/logo/bca.png')}}">
-                <p>ATM BCA</p>
-                <h5 class="card-title">6044611222</h5>
+                <p style="font-size: 10px">ATM BCA</p>
+                <p style="font-size: 30px">6044611222</h5>
                 <p class="card-text" style="font-size: 20px">Atas Nama : </p>
-                <p class="card-text" style="font-size: 20px">pt citra utama andalan </p>
+                <p class="card-text" style="font-size: 20px">PT Citra Utama Andalan </p>
                 </div>
                 </div>
                 </div>
@@ -87,7 +87,7 @@
                                          {{ 'Rp.' . number_format($o->subtotal)}}
                                     </td>
                                     <td>
-                                        <a href="{{url('order/konfirmasi/' . $o->id)}}" class="btn btn-secondary btn--small  small--hide" style="background: green">bayar</a>
+                                        <a href="{{url('order/konfirmasi/' . $o->id)}}" class="btn btn-secondary btn--small  small--hide" style="background: green">Konfirmasi Pembayaran</a>
                                         <a href="{{url('order/batal/' . $o->id)}}" class="btn btn-secondary btn--small  small--hide" style="background: red" onclick="return confirm('Yakin ingin membatalkan pesanan')">Batalkan</a>
                                     </td>
                                 </tr>
@@ -95,7 +95,7 @@
                             </tbody>
                     		<tfoot>
                                 <tr>
-                                    <td colspan="3" class="text-left"><a href="{{url("shop/products")}}" class="btn btn-secondary btn--small cart-continue">Continue shopping</a></td>
+                                    <td colspan="3" class="text-left"><a href="{{url("products")}}" class="btn btn-secondary btn--small cart-continue" style="background: #8AA385">Continue shopping</a></td>
                                     <td colspan="3" class="text-right">
 	                        
                                     </td>
