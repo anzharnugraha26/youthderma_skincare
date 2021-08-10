@@ -212,7 +212,7 @@
                                                         <img src="{{asset('image/bank/bca.png')}}" style="width: 250px;height: 150px;">
                                                         </div> --}}
                                                         <p>Transfer Sebesar {{'Rp.' . number_format($ongkir + $subtotal)}}  </p>
-                                                       <label>Pt Citra Utama Andalan</label>
+                                                       <label>PT Citra Utama Andalan</label>
                                                         <p>No Rek : 6044611222</p>
                                                     </div>
                                                 </div>
@@ -237,8 +237,8 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-                                                                <label for="input-cardno">Card Number  <span class="required-f">*</span></label>
-                                                                <input name="number" value="" placeholder="Card Number" id="input-cardno" class="form-control" type="text" required>
+                                                                <label for="input-cardno">Account Number  <span class="required-f">*</span></label>
+                                                                <input name="number" value="" placeholder="Account Number" id="input-cardno" class="form-control" type="text" required>
                                                             </div>
                                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                                 <label for="input-cvv">Email Address<span class="required-f">*</span></label>

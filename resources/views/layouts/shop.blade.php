@@ -333,12 +333,28 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 @if(Session::has('add-to'))
 <script>
     Swal.fire(
   'Good job!',
   'Product Add in Carts',
   'success')
+</script>
+@endif
+
+@if(Session::has('alamat'))
+<script>
+    Swal.fire(
+  'Silahkan Input Alamat Terlebih Dahulu',)
+</script>
+@endif
+
+@if(Session::has('cart'))
+<script>
+    Swal.fire(
+  'Keranjang Anda Kosong',
+  'Silahkan Berbelanja Terlebih Dahulu')
 </script>
 @endif
 

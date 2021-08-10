@@ -42,7 +42,7 @@ class CartController extends Controller
         $count = Keranjang::where('user_id', $userId)->count();
         $alamatcount = DB::table('alamats')->where('user_id', $userId)->count();
             if (empty($count)) {
-                return redirect()->back();
+                return redirect()->back()->with('cart', "test");
             } else{
 
                 if ($alamatcount >0) {
@@ -149,7 +149,10 @@ class CartController extends Controller
     public function destroy($id)
     {
         Keranjang::destroy($id);
-        
-        return redirect()->back();
+        $keranjang = Keranjang::where('user_id', Auth::user()->id)->count();
+        if ($keranjang != null) {
+            return redirect()->back();
+        }
+        return redirect('/products')->with('cart', "test");
     }
 }
