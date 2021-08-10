@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BankInfo;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
@@ -56,8 +57,15 @@ class ShopController extends Controller
             'bukti_bayar' => $fileName,
             'status_order_id' => '2'
         ]);
-        dd($order);
-        return view('shop.konfirmpayment');
+        BankInfo::create([
+            'name' => $request->name,
+            'user_id' => Auth::user()->id,
+            'order_id' => $order->id,
+            'bank' => $request->bank,
+            'email' => $request->email,
+            'number' => $request->number
+        ]);
+        return redirect()->back();
     }
 
  
@@ -70,7 +78,7 @@ class ShopController extends Controller
  
     public function getOrder($id)
     {
-        $order = Order::where('invoice', $id)->first();
+        $order = Order::where('invoice', $id)->get();
         return response()->json($order);
     }
 

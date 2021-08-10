@@ -45,7 +45,7 @@ Route::get('gallery', 'ShopController@gallery');
 Route::post('sendkontak' , 'ContactController@store');
 Route::get('confirm-payment', 'ShopController@payment');
 Route::post('confirm-payment', 'ShopController@savepayment');
-Route::get('getorder/{id}', 'ShopController@getOrder');
+Route::get('getorder/{id}', 'ShopController@getOrder')->name('order.getOrder');
 
 Route::get('test', 'HomeController@test');
 Route::get('test-payment', 'PaymentgetwayController@test');

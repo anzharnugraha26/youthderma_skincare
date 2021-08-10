@@ -4,7 +4,7 @@
     <div class="container">
     <div class="row mb-3">
         <div class="col-md-12 text-center">
-            <h2 class="display-5">Silahkan Lakukan Pembayaran Lewat No Rekening Berikut</h2>
+            <h2 class="display-5">Konfirmasi Pembayaran</h2>
         </div>
     </div>
     <div class="row">
@@ -13,27 +13,7 @@
             @if ($order != null)
             <div class="card">
                 <div class="card-body">
-                    <div class="row  mb-2 text-center">
-                       
-                        <div class="col-md-4" style="margin-left: 35%">
-                        <div style="max-width: 18rem;">
-                        
-                        <div class="card-body">
-                            <img src="{{asset('image/logo/bca.png')}}">
-                        <p>ATM BCA</p>
-                        <h5 class="card-title">6044611222</h5>
-                        <p class="card-text" style="font-size: 20px">Atas Nama : </p>
-                        <p class="card-text" style="font-size: 20px">PT Citra Utama Andalan </p>
-                        </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="row  mb-4">
-                        {{-- <div class="col-md-12 text-center">
-                            Transfer Sebesar Rp {{ number_format($order->subtotal,2,',','.') }} Ke No Rekening Di Atas
-                        </div> --}}
-                    </div>
-                    <hr>
+                 
                     <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
@@ -50,8 +30,30 @@
                             </select>
                         </div>
                             <div class="form-group">
+                                <label for="">Jumlah Pembayaran</label>
+                                <select name="cities_id" id="cities_id"autofocus="">
+                                   
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="">Upload Bukti Pembayaran</label>
                                 <input type="file" name="bukti_pembayaran" id="" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Dari Bank</label>
+                                <input type="text" name="bank" id="" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Atas Nama</label>
+                                <input type="text" name="name" id="" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Email Address</label>
+                                <input type="text" name="email" id="" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Account Number</label>
+                                <input type="text" name="number" id="" class="form-control" required>
                             </div>
                             <div class="text-right">
                             <button type="submit" class="btn btn-primary">Kirim</button>
@@ -60,8 +62,7 @@
                     </div>
                     </div>
                 </div>
-            </div>         
-            <h3 id="test">Data Tidak Ada</h3>       
+            </div>              
             @else
                 <h3>Data Tidak Ada</h3>
             @endif
@@ -75,11 +76,35 @@
 @endsection
 
 @section('script-shop')
-    <script>
-        $("#invoice").on('change' ,function () {
-            var id = $("#invoice").val();
-           
-        });
-        
-    </script>
+<script>
+    var toHtml = (tag, value) => {
+	$(tag).html(value);
+	}
+ $(document).ready(function() {
+    //  $('#province_id').select2();
+    //  $('#cities_id').select2();
+     $('#invoice').on('change',function(){
+     var id = $('#invoice').val();
+     var url = window.location.href;
+     var urlNya = url.substring(0, url.lastIndexOf('/order/'));   
+     $.ajax({
+         type:'GET',
+         url:urlNya + '/getorder/' + id,
+         dataType:'json',
+         success:function(data){
+            var op = '<option value="">Pilih Nominal Pembayaran Anda</option>';
+            if(data.length > 0) {
+			var i = 0;
+			for(i = 0; i < data.length; i++) {
+				op += `<option value="${data[i].subtotal}">Rp. ${data[i].subtotal.toLocaleString()}</option>`
+			}
+		    }
+            toHtml('[name="cities_id"]', op);
+         }
+     })
+     })
+ });    
+    
+    
+</script>
 @endsection
