@@ -359,6 +359,13 @@
 </script>
 @endif
 
+@if(Session::has('invoice'))
+<script>
+    Swal.fire(
+  'Silahkan Pilih No Invice Anda Terlebih Dahulu')
+</script>
+@endif
+
 {{-- @if(Auth::check())
 
 @if(Auth::user()->email_verified_at==null)

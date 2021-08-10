@@ -46,26 +46,30 @@ class ShopController extends Controller
 
     public function savepayment(Request $request)
     {
-        $fileName = '';
-        if ($request->bukti_pembayaran->getClientOriginalName()) {
-            $file = str_replace(' ', '', $request->bukti_pembayaran->getClientOriginalName());
-            $fileName = date('mYdHs') . rand(1, 999) . '_' . $file;
-            $request->bukti_pembayaran->move('image/bukti/', $fileName);
+        if ($request->invoice == "#") {
+            return redirect()->back()->with('invoice', "ye");
+        } else {
+            $fileName = '';
+            if ($request->bukti_pembayaran->getClientOriginalName()) {
+                $file = str_replace(' ', '', $request->bukti_pembayaran->getClientOriginalName());
+                $fileName = date('mYdHs') . rand(1, 999) . '_' . $file;
+                $request->bukti_pembayaran->move('image/bukti/', $fileName);
+            }
+            $order = Order::where('invoice', $request->invoice)->first();
+            $order->update([
+                'bukti_bayar' => $fileName,
+                'status_order_id' => '2'
+            ]);
+            BankInfo::create([
+                'name' => $request->name,
+                'user_id' => Auth::user()->id,
+                'order_id' => $order->id,
+                'bank' => $request->bank,
+                'email' => $request->email,
+                'number' => $request->number
+            ]);
+            return redirect()->back();    
         }
-        $order = Order::where('invoice', $request->invoice)->first();
-        $order->update([
-            'bukti_bayar' => $fileName,
-            'status_order_id' => '2'
-        ]);
-        BankInfo::create([
-            'name' => $request->name,
-            'user_id' => Auth::user()->id,
-            'order_id' => $order->id,
-            'bank' => $request->bank,
-            'email' => $request->email,
-            'number' => $request->number
-        ]);
-        return redirect()->back();
     }
 
  
