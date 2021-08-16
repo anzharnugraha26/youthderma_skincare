@@ -11,11 +11,9 @@ use Illuminate\Support\Facades\Auth;
 Route::get('auth/google', 'GoogleController@redirectToGoogle');
 Route::get('auth/google/callback', 'GoogleController@handleGoogleCallback');
 
-
 Route::get('/', 'ShopController@index');
 Route::get('products', 'ShopController@product');
 Route::get('/product-detail/{id}', 'ShopController@productDetail');
-
 Route::get('contact-us', 'ShopController@kontakUs');
 
 Route::get('/carts' , 'Shop\CartController@create');
@@ -71,6 +69,8 @@ Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin']
     Route::get('transaksi-destroy/{id}','Admin\TransaksiController@destroy');
     Route::post('/input-resi/{id}','Admin\TransaksiController@inputresi');
 
+    Route::get('control-admin', 'Admin\AdminController@control');
+    Route::get('control-admin/create', 'Admin\AdminController@create');
 });
 
 

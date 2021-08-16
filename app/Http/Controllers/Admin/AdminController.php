@@ -30,6 +30,17 @@ class AdminController extends Controller
         return view('admin.user.index');
     }
 
+    public function control()
+    {
+        return view('admin.control.index');
+    }
+
+    public function create()
+    {
+        return view('admin.control.create');
+    }
+
+
 
     public function store(Request $request)
     {

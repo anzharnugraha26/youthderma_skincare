@@ -204,7 +204,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url("admin/product")}}" class="nav-link  {{ 'admin/product' == request()->path()? 'active' : ''}} {{ 'admin/product/create' == request()->path()? 'active' : ''}}">
+            <a href="{{url("admin/control-admin")}}" class="nav-link  {{ 'admin/control-admin' == request()->path()? 'active' : ''}} {{ 'admin/control-admin' == request()->path()? 'active' : ''}}">
               <i class="nav-icon fas fa-cog"></i>
               <p>
                Admin Setting
@@ -229,7 +229,7 @@
 
 @yield('content')
 <footer class="main-footer">
-    <strong>Copyright &copy; 2021 <a href="{{url("/")}}">Youthderma Aesthectic Clinic Website </a></strong>
+    <strong>Copyright &copy; 2021 <a href="{{url("/")}}">Youthderma SkinCare Website </a></strong>
   </footer>
 
   <!-- Control Sidebar -->
