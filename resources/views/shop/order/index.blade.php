@@ -144,7 +144,7 @@
                                          {{ 'Rp.' . number_format($o->subtotal)}}
                                     </td>
                                     <td>
-                                        <a href="{{url("shop/order-detail/$o->id")}}" name="clear" class="btn btn-secondary btn--small  small--hide" style="background: green">Detail</button>
+                                        <a href="{{url("order-detail/$o->id")}}" name="clear" class="btn btn-secondary btn--small  small--hide" style="background: green">Detail</button>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -190,7 +190,7 @@
                                          {{ 'Rp.' . number_format($o->subtotal)}}
                                     </td>
                                     <td>
-                                        <a href="{{url("shop/order-detail/$o->id")}}" name="clear" class="btn btn-secondary btn--small  small--hide" style="background: green">Detail</button>
+                                        <a href="{{url("order-detail/$o->id")}}" name="clear" class="btn btn-secondary btn--small  small--hide" style="background: green">Detail</button>
                                         </td>
                                     </tr>
                                 @endforeach

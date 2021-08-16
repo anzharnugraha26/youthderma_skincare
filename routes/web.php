@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 
-// Route::get('/', function () {
-//     return view('welcome');
+// Route::get('/email-test', function () {
+//     return view('email.payreminder');
 // });
 
 Route::get('auth/google', 'GoogleController@redirectToGoogle');

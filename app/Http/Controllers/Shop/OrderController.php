@@ -118,6 +118,34 @@ class OrderController extends Controller
                 $message->to('youthderma@gmail.com', 'Youthderma aesthetic Clinic');
                 $message->subject('Pesanan dari  :' . Auth::user()->email, Auth::user()->email);
             });
+
+            
+            $detail_order = DB::table('detail_orders')
+            ->join('products','products.id','=','detail_orders.product_id')
+            ->join('orders','orders.id','=','detail_orders.order_id')
+            ->select('products.name as nama_produk','products.image','detail_orders.*','products.price','orders.*')
+            ->where('detail_orders.order_id',$order->id)
+            ->get();
+            $order_email = DB::table('orders')
+                ->join('users','users.id','=','orders.user_id')
+                ->join('status_order','status_order.id','=','orders.status_order_id')
+                ->select('orders.*','users.name as nama_pelanggan','status_order.name as status')
+                ->where('orders.id',$order->id)
+                ->first();
+            
+            $pay_reminder = array(
+                'order1' => $detail_order,
+                'order2' => $order_email,
+                'user_name' => Auth::user()->name,
+                'date' => date('Ymd')
+            );
+
+            Mail::send('email.payreminder', $pay_reminder, function ($message) {
+                $message->from('youthderma@gmail.com', 'YouthDerma Skincare');
+                $message->to(Auth::user()->email, 'Cusstomer');
+                $message->subject('Pesanan dari  :' . Auth::user()->email, Auth::user()->email);
+            });
+
             return redirect('/order');
             // dd($order); 
         }

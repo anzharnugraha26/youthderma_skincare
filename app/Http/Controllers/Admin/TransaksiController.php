@@ -40,7 +40,7 @@ class TransaksiController extends Controller
 
         return view('admin.transaksi.perludicek',$data);
     }
-
+ 
     public function detail($id)
     {
         //ambil data detail order sesuai id
