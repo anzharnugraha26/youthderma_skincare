@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -44,7 +45,22 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:users' ,
+            'role' => 'required'
+        ]);
+
+
+        $user = User::create([
+            'email' => $request->email,
+            'password' => bcrypt($request->password) ,
+            'role' => $request->role,
+            'name' => $request->name
+        ]);
+        $user->markEmailAsVerified();
+        // dd($user);
+        return redirect('admin/control-admin')->with('simpan', "hhh");
     }
 
 

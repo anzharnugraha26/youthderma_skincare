@@ -71,6 +71,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin'],  'prefix' => 'admin']
 
     Route::get('control-admin', 'Admin\AdminController@control');
     Route::get('control-admin/create', 'Admin\AdminController@create');
+    Route::post('control-admin', 'Admin\AdminController@store');
 });
 
 
